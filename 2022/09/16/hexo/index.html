@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="liusu">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="hexo安装 node.js这个不用说了，常常使用 node.js， 环境肯定是必要的。  安装完之后会有两个东西，一个是 nodejs 本身，一个是 npm 包管理器。 12345❯ node -vv16.16.0❯ npm -vnpm WARN config global &#96;--global&#96;, &#96;--local&#96; are deprecated. Use &#96;--location&#x3D;global&#96;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo">
+<meta property="og:url" content="http://example.com/2022/09/16/hexo/index.html">
+<meta property="og:site_name" content="刘同学的博客">
+<meta property="og:description" content="hexo安装 node.js这个不用说了，常常使用 node.js， 环境肯定是必要的。  安装完之后会有两个东西，一个是 nodejs 本身，一个是 npm 包管理器。 12345❯ node -vv16.16.0❯ npm -vnpm WARN config global &#96;--global&#96;, &#96;--local&#96; are deprecated. Use &#96;--location&#x3D;global&#96;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/09/16/hexo/nodejs.png">
+<meta property="og:image" content="http://example.com/2022/09/16/hexo/helloworld.png">
+<meta property="og:image" content="http://example.com/2022/09/16/hexo/gitpagesone.png">
+<meta property="og:image" content="http://example.com/2022/09/16/hexo/gitpagestwo.png">
+<meta property="og:image" content="http://example.com/2022/09/16/hexo/github.png">
+<meta property="og:image" content="http://example.com/2022/09/16/hexo/repository.png">
+<meta property="og:image" content="http://example.com/2022/09/16/hexo/pages.png">
+<meta property="article:published_time" content="2022-09-16T10:01:36.000Z">
+<meta property="article:modified_time" content="2022-09-16T10:06:02.023Z">
+<meta property="article:author" content="liusu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/09/16/hexo/nodejs.png">
+  
+  
+  
+  <title>hexo - 刘同学的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>liusu</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="hexo"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-16 18:01" pubdate>
+          2022年9月16日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          59 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">hexo</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><h3 id="安装-node-js"><a href="#安装-node-js" class="headerlink" title="安装 node.js"></a>安装 node.js</h3><p>这个不用说了，常常使用 node.js， 环境肯定是必要的。</p>
+<p><img src="/2022/09/16/hexo/nodejs.png" srcset="/img/loading.gif" lazyload alt="image-20220916101935683"></p>
+<p>安装完之后会有两个东西，一个是 <code>nodejs</code> 本身，一个是 <code>npm</code> 包管理器。</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">❯ node -v<br>v16.<span class="hljs-number">16.0</span><br>❯ npm -v<br>npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.<br><span class="hljs-number">8.18</span>.<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h3><p>由于 <code>nodejs</code> 的服务器在国外，在国内安装下载会很慢，我们可以使用 <code>nrm</code> 工具来切换镜像源。 </p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs awk">❯ nrm ls<br><br>  npm ---------- https:<span class="hljs-regexp">//</span>registry.npmjs.org/<br>  yarn --------- https:<span class="hljs-regexp">//</span>registry.yarnpkg.com/<br>  tencent ------ https:<span class="hljs-regexp">//mi</span>rrors.cloud.tencent.com<span class="hljs-regexp">/npm/</span><br>  cnpm --------- https:<span class="hljs-regexp">//</span>r.cnpmjs.org/<br>* taobao ------- https:<span class="hljs-regexp">//</span>registry.npmmirror.com/<br>  npmMirror ---- https:<span class="hljs-regexp">//</span>skimdb.npmjs.com<span class="hljs-regexp">/registry/</span><br><br></code></pre></td></tr></table></figure>
+
+<p>现在所使用的就是 <code>taobao</code> 镜像源。</p>
+<p>安装 hexo</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">❯ npm install hexo-cli -g<br>npm WARN config <span class="hljs-keyword">global</span> `<span class="hljs-comment">--global`, `--local` are deprecated. Use `--location=global` instead.</span><br><br>added <span class="hljs-number">59</span> packages <span class="hljs-keyword">in</span> <span class="hljs-number">3</span>s<br>npm <span class="hljs-keyword">notice</span><br>npm <span class="hljs-keyword">notice</span> <span class="hljs-built_in">New</span> minor <span class="hljs-keyword">version</span> <span class="hljs-keyword">of</span> npm available! <span class="hljs-number">8.18</span><span class="hljs-number">.0</span> -&gt; <span class="hljs-number">8.19</span><span class="hljs-number">.2</span><br>npm <span class="hljs-keyword">notice</span> Changelog: https://github.com/npm/cli/releases/tag/v8<span class="hljs-number">.19</span><span class="hljs-number">.2</span><br>npm <span class="hljs-keyword">notice</span> Run npm install -g npm@<span class="hljs-number">8.19</span><span class="hljs-number">.2</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">update</span>!<br>npm <span class="hljs-keyword">notice</span><br></code></pre></td></tr></table></figure>
+
+<p>可以验证一下是否安装成功</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">❯ hexo -v<br>hexo-<span class="hljs-keyword">cli</span>: <span class="hljs-number">4.3</span><span class="hljs-number">.0</span><br><span class="hljs-symbol">os:</span> win32 <span class="hljs-number">10.0</span><span class="hljs-number">.19043</span><br><span class="hljs-symbol">node:</span> <span class="hljs-number">16.16</span><span class="hljs-number">.0</span><br><span class="hljs-symbol">v8:</span> <span class="hljs-number">9.4</span><span class="hljs-number">.146</span><span class="hljs-number">.24</span>-node<span class="hljs-number">.21</span><br><span class="hljs-symbol">uv:</span> <span class="hljs-number">1.43</span><span class="hljs-number">.0</span><br><span class="hljs-symbol">zlib:</span> <span class="hljs-number">1.2</span><span class="hljs-number">.11</span><br><span class="hljs-symbol">brotli:</span> <span class="hljs-number">1.0</span><span class="hljs-number">.9</span><br><span class="hljs-symbol">ares:</span> <span class="hljs-number">1.18</span><span class="hljs-number">.1</span><br><span class="hljs-symbol">modules:</span> <span class="hljs-number">93</span><br><span class="hljs-symbol">nghttp2:</span> <span class="hljs-number">1.47</span><span class="hljs-number">.0</span><br><span class="hljs-symbol">napi:</span> <span class="hljs-number">8</span><br><span class="hljs-symbol">llhttp:</span> <span class="hljs-number">6.0</span><span class="hljs-number">.7</span><br><span class="hljs-symbol">openssl:</span> <span class="hljs-number">1.1</span><span class="hljs-number">.1</span>q+quic<br><span class="hljs-symbol">cldr:</span> <span class="hljs-number">40.0</span><br><span class="hljs-symbol">icu:</span> <span class="hljs-number">70.1</span><br><span class="hljs-symbol">tz:</span> <span class="hljs-number">2021</span>a3<br><span class="hljs-symbol">unicode:</span> <span class="hljs-number">14.0</span><br><span class="hljs-symbol">ngtcp2:</span> <span class="hljs-number">0.1</span><span class="hljs-number">.0</span>-DEV<br><span class="hljs-symbol">nghttp3:</span> <span class="hljs-number">0.1</span><span class="hljs-number">.0</span>-DEV<br></code></pre></td></tr></table></figure>
+
+<h3 id="创建根目录"><a href="#创建根目录" class="headerlink" title="创建根目录"></a>创建根目录</h3><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">❯ cd /<br>❯ md hexo<br><br><span class="hljs-code">    Directory: C:\</span><br><br>Mode                 LastWriteTime         Length Name<br><span class="hljs-bullet">----                 </span>-------------         ------ ----<br>d----           2022/9/16    10:29                hexo<br>❯ cd .\hexo\<br>❯ ls<br>❯ pwd<br><br><span class="hljs-section">Path</span><br><span class="hljs-section">----</span><br>C:\hexo<br><br></code></pre></td></tr></table></figure>
+
+<p>如果搭建的过程中有问题，可以将这个文件夹干掉重新来过就行了，不用畏惧。</p>
+<h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs vhdl">❯ hexo init<br>INFO  Cloning hexo-starter https://github.com/hexojs/hexo-starter.git<br>INFO  Install dependencies<br><span class="hljs-literal">warning</span> hexo-renderer-stylus &gt; stylus &gt; css &gt; source-<span class="hljs-keyword">map</span>-resolve@<span class="hljs-number">0.6</span>.<span class="hljs-number">0</span>: See https://github.com/lydell/source-<span class="hljs-keyword">map</span>-resolve#deprecated<br><span class="hljs-literal">warning</span> Your current version <span class="hljs-keyword">of</span> Yarn <span class="hljs-keyword">is</span> <span class="hljs-keyword">out</span> <span class="hljs-keyword">of</span> date. The latest version <span class="hljs-keyword">is</span> <span class="hljs-string">&quot;1.22.19&quot;</span>, <span class="hljs-keyword">while</span> you<span class="hljs-symbol">&#x27;re</span> <span class="hljs-keyword">on</span> <span class="hljs-string">&quot;1.22.18&quot;</span>.<br>INFO  Start blogging <span class="hljs-keyword">with</span> Hexo!<br>❯ ls<br>.github<br>node_modules<br>scaffolds<br>source<br>themes<br>_config.landscape.yml<br>_config.yml<br>.gitignore<br><span class="hljs-keyword">package</span>.json<br>yarn.lock<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">❯ hexo s<br><span class="hljs-keyword">INFO</span>  Validating config<br><span class="hljs-keyword">INFO</span>  <span class="hljs-keyword">Start</span> processing<br><span class="hljs-keyword">INFO</span>  Hexo <span class="hljs-keyword">is</span> running at http://localhost:<span class="hljs-number">4000</span>/ . Press Ctrl+C <span class="hljs-keyword">to</span> stop.<br><br></code></pre></td></tr></table></figure>
+
+<p>这个时候博客已经有了，而且默认创建了一篇文章，就叫做 <code>hello world</code> 。</p>
+<p><img src="/2022/09/16/hexo/helloworld.png" srcset="/img/loading.gif" lazyload alt="image-20220916103900781"></p>
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>使用 <code>Ctrl + C</code>，终止。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">❯ hexo s<br><span class="hljs-keyword">INFO</span>  Validating config<br><span class="hljs-keyword">INFO</span>  <span class="hljs-keyword">Start</span> processing<br><span class="hljs-keyword">INFO</span>  Hexo <span class="hljs-keyword">is</span> running at http://localhost:<span class="hljs-number">4000</span>/ . Press Ctrl+C <span class="hljs-keyword">to</span> stop.<br><span class="hljs-keyword">INFO</span>  Farewell<br></code></pre></td></tr></table></figure>
+
+<p>&#x3D;&#x3D;<code>hexo s</code> 这个启动命令平时就是做预览用。&#x3D;&#x3D;</p>
+<p>我们生成文章方式有两种，一种是通过命令行的方式，一种是通过直接在相应的路径下创建文件。</p>
+<p>命令行方式</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros">❯ hexo n <span class="hljs-string">&quot;test&quot;</span><br><span class="hljs-built_in">INFO</span>  Validating<span class="hljs-built_in"> config</span><br><span class="hljs-built_in"></span><span class="hljs-built_in">INFO</span>  Created: C:\hexo\source\_posts\test.md<br></code></pre></td></tr></table></figure>
+
+<p>直接创建文件</p>
+<p>直接在 <code>C:\hexo\source\_posts\</code> 路径下创建 <code>md</code> 文件也可以。这个自己测试一下就行了。</p>
+<p>这时候博客的搭建就已经完成了。</p>
+<h3 id="部署到-gitee"><a href="#部署到-gitee" class="headerlink" title="部署到 gitee"></a>部署到 <code>gitee</code></h3><p>博客不可能就只放到本地用，我们需要把它部署到远端去。一种免费的方式就是部署到 <code>gitee</code> 上面去。</p>
+<p>创建仓库。</p>
+<p>开启 <code>gitpages</code> 服务。</p>
+<p><img src="/2022/09/16/hexo/gitpagesone.png" srcset="/img/loading.gif" lazyload alt="image-20220916111553832"></p>
+<p><img src="/2022/09/16/hexo/gitpagestwo.png" srcset="/img/loading.gif" lazyload alt="image-20220916111601126"></p>
+<p>等待审核，听说是巨慢，要等一两天。</p>
+<h3 id="尝试-github"><a href="#尝试-github" class="headerlink" title="尝试 github"></a>尝试 github</h3><p><img src="/2022/09/16/hexo/github.png" srcset="/img/loading.gif" lazyload alt="image-20220916112101236"></p>
+<h3 id="安装-git-部署插件"><a href="#安装-git-部署插件" class="headerlink" title="安装 git 部署插件"></a>安装 git 部署插件</h3><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey">❯ npm install --save hexo-deployer-git<br>npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.<br><br>added <span class="hljs-number">1</span> package, <span class="hljs-literal">and</span> changed <span class="hljs-number">19</span> packages in <span class="hljs-number">2</span>s<br><br><span class="hljs-number">19</span> packages are looking for funding<br>  run `npm fund` for details<br></code></pre></td></tr></table></figure>
+
+<h3 id="设置-config-yml"><a href="#设置-config-yml" class="headerlink" title="设置 _config.yml"></a>设置 <code>_config.yml</code></h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-meta"># Deployment</span><br><span class="hljs-meta">## Docs: https:<span class="hljs-comment">//hexo.io/docs/one-command-deployment</span></span><br><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repo:</span> git@github.com:liusuboop/liusuboop.github.io.git<br><span class="hljs-symbol">  branch:</span> master<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><code class="hljs powershell">❯ hexo d<br>INFO  Validating config<br>INFO  <span class="hljs-built_in">Start</span> processing<br>INFO  Files loaded <span class="hljs-keyword">in</span> <span class="hljs-number">72</span> ms<br>INFO  Generated: archives/index.html<br>INFO  Generated: archives/<span class="hljs-number">2022</span>/index.html<br>INFO  Generated: index.html<br>INFO  Generated: fancybox/jquery.fancybox.min.css<br>INFO  Generated: js/script.js<br>INFO  Generated: css/style.css<br>INFO  Generated: archives/<span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/index.html<br>INFO  Generated: css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.woff<br>INFO  Generated: js/jquery<span class="hljs-literal">-3</span>.<span class="hljs-number">4.1</span>.min.js<br>INFO  Generated: fancybox/jquery.fancybox.min.js<br>INFO  Generated: css/fonts/FontAwesome.otf<br>INFO  Generated: css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.eot<br>INFO  Generated: css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.woff2<br>INFO  Generated: css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.ttf<br>INFO  Generated: css/images/banner.jpg<br>INFO  Generated: <span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/<span class="hljs-number">16</span>/hello<span class="hljs-literal">-world</span>/index.html<br>INFO  Generated: <span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/<span class="hljs-number">16</span>/test/index.html<br>INFO  Generated: <span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/<span class="hljs-number">16</span>/markdwon/index.html<br>INFO  Generated: css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.svg<br>INFO  <span class="hljs-number">19</span> files generated <span class="hljs-keyword">in</span> <span class="hljs-number">248</span> ms<br>INFO  Deploying: git<br>INFO  Setting up Git deployment...<br>Initialized empty Git repository <span class="hljs-keyword">in</span> C:/hexo/.deploy_git/.git/<br>[<span class="hljs-type">master</span> (<span class="hljs-type">root</span>-<span class="hljs-type">commit</span>) <span class="hljs-type">c023249</span>] First commit<br> <span class="hljs-number">1</span> file changed, <span class="hljs-number">0</span> insertions(+), <span class="hljs-number">0</span> deletions(-)<br> create mode <span class="hljs-number">100644</span> placeholder<br>INFO  Clearing .deploy_git folder...<br>INFO  Copying files from public folder...<br>INFO  Copying files from extend dirs...<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> <span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/<span class="hljs-number">16</span>/hello<span class="hljs-literal">-world</span>/index.html.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> <span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/<span class="hljs-number">16</span>/markdwon/index.html.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> <span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/<span class="hljs-number">16</span>/test/index.html.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> archives/<span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/index.html.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> archives/<span class="hljs-number">2022</span>/index.html.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> archives/index.html.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.svg.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> css/style.css.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> fancybox/jquery.fancybox.min.js.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> index.html.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> js/jquery<span class="hljs-literal">-3</span>.<span class="hljs-number">4.1</span>.min.js.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>warning: LF will be replaced by CRLF <span class="hljs-keyword">in</span> js/script.js.<br>The file will have its original line endings <span class="hljs-keyword">in</span> your working directory<br>[<span class="hljs-type">master</span> <span class="hljs-type">c727c91</span>] Site updated: <span class="hljs-number">2022</span><span class="hljs-literal">-09-16</span> <span class="hljs-number">11</span>:<span class="hljs-number">26</span>:<span class="hljs-number">13</span><br> <span class="hljs-number">20</span> files changed, <span class="hljs-number">5843</span> insertions(+)<br> create mode <span class="hljs-number">100644</span> <span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/<span class="hljs-number">16</span>/hello<span class="hljs-literal">-world</span>/index.html<br> create mode <span class="hljs-number">100644</span> <span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/<span class="hljs-number">16</span>/markdwon/index.html<br> create mode <span class="hljs-number">100644</span> <span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/<span class="hljs-number">16</span>/test/index.html<br> create mode <span class="hljs-number">100644</span> archives/<span class="hljs-number">2022</span>/<span class="hljs-number">09</span>/index.html<br> create mode <span class="hljs-number">100644</span> archives/<span class="hljs-number">2022</span>/index.html<br> create mode <span class="hljs-number">100644</span> archives/index.html<br> create mode <span class="hljs-number">100644</span> css/fonts/FontAwesome.otf<br> create mode <span class="hljs-number">100644</span> css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.eot<br> create mode <span class="hljs-number">100644</span> css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.svg<br> create mode <span class="hljs-number">100644</span> css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.ttf<br> create mode <span class="hljs-number">100644</span> css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.woff<br> create mode <span class="hljs-number">100644</span> css/fonts/fontawesome<span class="hljs-literal">-webfont</span>.woff2<br> create mode <span class="hljs-number">100644</span> css/images/banner.jpg<br> create mode <span class="hljs-number">100644</span> css/style.css<br> create mode <span class="hljs-number">100644</span> fancybox/jquery.fancybox.min.css<br> create mode <span class="hljs-number">100644</span> fancybox/jquery.fancybox.min.js<br> create mode <span class="hljs-number">100644</span> index.html<br> create mode <span class="hljs-number">100644</span> js/jquery<span class="hljs-literal">-3</span>.<span class="hljs-number">4.1</span>.min.js<br> create mode <span class="hljs-number">100644</span> js/script.js<br> delete mode <span class="hljs-number">100644</span> placeholder<br>Enumerating objects: <span class="hljs-number">38</span>, done.<br>Counting objects: <span class="hljs-number">100</span>% (<span class="hljs-number">38</span>/<span class="hljs-number">38</span>), done.<br>Delta compression <span class="hljs-keyword">using</span> up to 12 threads<br>Compressing objects: <span class="hljs-number">100</span>% (<span class="hljs-number">29</span>/<span class="hljs-number">29</span>), done.<br>Writing objects: <span class="hljs-number">100</span>% (<span class="hljs-number">38</span>/<span class="hljs-number">38</span>), <span class="hljs-number">886.79</span> KiB | <span class="hljs-number">1.81</span> MiB/s, done.<br>Total <span class="hljs-number">38</span> (delta <span class="hljs-number">6</span>), reused <span class="hljs-number">0</span> (delta <span class="hljs-number">0</span>), pack<span class="hljs-literal">-reused</span> <span class="hljs-number">0</span><br>remote: Resolving deltas: <span class="hljs-number">100</span>% (<span class="hljs-number">6</span>/<span class="hljs-number">6</span>), done.<br>To github.com:liusuboop/liusuboop.github.io.git<br> * [<span class="hljs-type">new</span> <span class="hljs-type">branch</span>]      HEAD -&gt; master<br>Branch <span class="hljs-string">&#x27;master&#x27;</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">&#x27;master&#x27;</span> from <span class="hljs-string">&#x27;git@github.com:liusuboop/liusuboop.github.io.git&#x27;</span>.<br>INFO  Deploy done: git<br><br></code></pre></td></tr></table></figure>
+
+<p>这时候发现仓库中多了很多东西。</p>
+<p><img src="/2022/09/16/hexo/repository.png" srcset="/img/loading.gif" lazyload alt="image-20220916112744999"></p>
+<p>访问 <code>https://liusuboop.github.io/</code></p>
+<p><img src="/2022/09/16/hexo/pages.png" srcset="/img/loading.gif" lazyload alt="image-20220916112843930"></p>
+<p>这样博客就成功部署到 <code>GitHub</code> 上了。</p>
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>现在已经搭起来了。别的以后再说。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>hexo</div>
+      <div>http://example.com/2022/09/16/hexo/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>liusu</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月16日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/16/markdwon/" title="markdown 弊端">
+                        <span class="hidden-mobile">markdown 弊端</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
